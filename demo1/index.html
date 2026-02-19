@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K. T. Chan & Co. Solicitors</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #408050; /* Logo green */
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d4a373; /* Warm tan accent */
+    }
+    .hero {
+      background: url('law-office.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #1a1a1a; /* fallback if image missing */
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    section {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #408050; /* Green headings */
+    }
+    .contact-info p {
+      margin: 5px 0;
+    }
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #408050;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: #a0cfa0; /* Muted green hover */
+      color: #1a1a1a;
+    }
+    footer {
+      background-color: #1a1a1a;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+      .hero {
+        padding: 60px 15px;
+      }
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+      .hero p {
+        font-size: 0.95rem;
+      }
+      section {
+        padding: 20px 15px;
+      }
+      iframe {
+        height: 300px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        margin: 5px 0;
+      }
+      .hero {
+        padding: 40px 10px;
+      }
+      .hero h2 {
+        font-size: 1.4rem;
+      }
+      .hero p {
+        font-size: 0.85rem;
+      }
+      section h3 {
+        font-size: 1.3rem;
+      }
+      iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>K. T. Chan & Co. Solicitors</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Our Team</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Trusted Legal Solutions in Hong Kong</h2>
+    <p>Providing professional legal services with integrity and dedication since 2014.</p>
+    <a href="#contact" class="cta-button">Contact Us</a>
+  </div>
+
+  <section>
+    <h3>About Us</h3>
+    <p><strong>Office Address:</strong> Unit 702, 168 Queen’s Road Central, Hong Kong</p>
+    <p><strong>Principal Solicitor:</strong> CHAN Kin Tin (China-Appointed Attesting Officer)</p>
+    <p><strong>Consultant:</strong> CHAN Lai Hung Linda</p>
+    <p><strong>Associated Firm:</strong> Rita Law & Co.</p>
+    <p><strong>Years of Service:</strong> Established in 2014</p>
+  </section>
+
+  <section id="contact" class="contact-info">
+    <h3>Contact Information</h3>
+    <p><strong>Telephone:</strong> (852) 3462 2805</p>
+    <p><strong>Fax:</strong> (852) 3462 2786</p>
+    <p><strong>Email:</strong> enquiry@ktchanco.com</p>
+    <p><strong>Business Hours:</strong> Monday to Friday: 9:30 am – 1:00 pm, 2:00 pm – 5:30 pm</p>
+  </section>
+
+  <section>
+    <h3>Find Us</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.825641131582!2d114.1534454!3d22.2845937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404005b87705761%3A0xf6e9f857719f9cc6!2sK.%20T.%20CHAN%20%26%20CO.!5e0!3m2!1sen!2shk!4v1770912345893!5m2!1sen!2shk" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <footer>
+    <p>© K. T. Chan & Co. 2026. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
