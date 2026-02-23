@@ -73,10 +73,10 @@
       <div class="brand" style="color:#4C7638">K. T. CHAN &amp; CO.</div>
       <nav aria-label="Primary">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Legal Services</a></li>
-          <li><a href="#people">Solicitors</a></li>
-          <li><a href="#contact" class="cta">Contact</a></li>
+          <li><a href="#about"><span data-i18n="nav.about">About</span></a></li>
+          <li><a href="#services"><span data-i18n="nav.services">Practice Areas</span></a></li>
+          <li><a href="#people"><span data-i18n="nav.people">Solicitors</span></a></li>
+          <li><a href="#contact" class="cta"><span data-i18n="nav.contact">Contact Us</span></a></li>
         </ul>
       </nav>
     </div>
@@ -144,9 +144,9 @@
 
   <!-- SERVICES -->
   <section id="services" class="container">
-    <h2 data-lang="en" class="show">Legal Services</h2>
-    <h2 data-lang="tc" class="tc">法律服務</h2>
-    <h2 data-lang="sc" class="sc">法律服务</h2>
+    <h2 data-lang="en" class="show">Practice Areas</h2>
+    <h2 data-lang="tc" class="tc">專業範疇</h2>
+    <h2 data-lang="sc" class="sc">专业范畴</h2>
     <p class="kicker" data-lang="en" class="show">Comprehensive legal solutions for individuals and businesses</p>
     <p class="kicker tc" data-lang="tc">以下為佔位文字，可替換為實際業務範疇。</p>
     <p class="kicker sc" data-lang="sc">以下为占位文字，可替换为实际业务范畴。</p>
@@ -164,8 +164,8 @@
   <section id="people">
     <div class="container">
       <h2 data-lang="en" class="show">Solicitors</h2>
-      <h2 class="tc" data-lang="tc">律師</h2>
-      <h2 class="sc" data-lang="sc">律师</h2>
+      <h2 class="tc" data-lang="tc">律師團隊</h2>
+      <h2 class="sc" data-lang="sc">律师团队</h2>
       <p class="kicker" data-lang="en" class="show">Your first points of contact.</p>
       <p class="kicker tc" data-lang="tc">主要聯絡人。</p>
       <p class="kicker sc" data-lang="sc">主要联络人。</p>
@@ -256,10 +256,43 @@
     </div>
     <script>
       document.getElementById('y').textContent = new Date().getFullYear();
+
+      // Existing language toggle hookups
       const buttons = document.querySelectorAll('.lang-switch button');
       const langBlocks = document.querySelectorAll('[data-lang]');
       const headings = document.querySelectorAll('h2[data-lang]');
       const kickers = document.querySelectorAll('p.kicker[data-lang]');
+
+      // i18n dictionary for nav labels
+      const i18n = {
+        en: {
+          'nav.about': 'About',
+          'nav.services': 'Practice Areas',
+          'nav.people': 'Solicitors',
+          'nav.contact': 'Contact Us'
+        },
+        tc: {
+          'nav.about': '關於',
+          'nav.services': '專業範疇',
+          'nav.people': '律師團隊',
+          'nav.contact': '聯絡我們'
+        },
+        sc: {
+          'nav.about': '关于',
+          'nav.services': '专业范畴',
+          'nav.people': '律师团队',
+          'nav.contact': '联系我们'
+        }
+      };
+
+      function applyTranslations(langCode){
+        const dict = i18n[langCode] || i18n.en;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if(dict[key]) el.textContent = dict[key];
+        });
+      }
+
       function setLang(code){
         langBlocks.forEach(s => s.classList.toggle('show', s.getAttribute('data-lang') === code));
         headings.forEach(h => h.classList.toggle('show', h.getAttribute('data-lang') === code));
@@ -273,8 +306,16 @@
         if(code==='tc') htmlLang='zh-Hant';
         if(code==='sc') htmlLang='zh-CN';
         document.documentElement.lang = htmlLang;
+        applyTranslations(code);
       }
+
+      // make setLang available globally if needed
+      window.setLang = setLang;
+
+      // Bind buttons
       buttons.forEach(b => b.addEventListener('click', () => setLang(b.dataset.switch)));
+
+      // Initialize
       setLang('en');
     </script>
   </footer>
