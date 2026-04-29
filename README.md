@@ -1,5 +1,5 @@
 
-# K. T. CHAN & CO. — Full-width Contact sections
+# K.T. CHAN & CO. — Full-width Contact sections
 
 - Contact sections (EN / 繁體 / 简体) are now **full-width** (full-bleed) using a `width:100vw` band that breaks out of the centered container while keeping inner content aligned.
 - Maps and details sit inside a `container` within the full-bleed band.
